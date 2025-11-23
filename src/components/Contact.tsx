@@ -13,6 +13,20 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Format the message for WhatsApp
+    const whatsappMessage = `Hello! I'm interested in your laptop repair services.%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Message:* ${formData.message}`;
+    
+    // WhatsApp number (replace with your actual number)
+    const whatsappNumber = '919339035552'; // Remove the + sign
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success message and reset form
     setSubmitted(true);
     setTimeout(() => {
       setFormData({ name: '', phone: '', message: '' });
@@ -41,7 +55,7 @@ export default function Contact() {
             Get in <span className="text-orange-500">Touch</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Have a laptop issue? Reach out to us and we'll get it fixed!
+            Have a laptop issue? Reach out to us on WhatsApp and we'll get it fixed!
           </p>
         </motion.div>
 
@@ -59,8 +73,13 @@ export default function Contact() {
                   <Phone className="w-6 h-6 text-orange-500" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-slate-900 mb-1">Phone</h3>
-                  <a href="tel:+919339035552" className="text-gray-600 hover:text-orange-500 transition-colors">
+                  <h3 className="text-lg font-semibold text-slate-900 mb-1">Phone / WhatsApp</h3>
+                  <a 
+                    href="https://wa.me/919339035552" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-orange-500 transition-colors"
+                  >
                     +91 9339035552
                   </a>
                 </div>
@@ -162,11 +181,11 @@ export default function Contact() {
                 className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-4 rounded-lg font-semibold hover:from-orange-600 hover:to-orange-700 transition-all duration-200 shadow-lg flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {submitted ? (
-                  <span>Message Sent!</span>
+                  <span>Opening WhatsApp...</span>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    <span>Send Message</span>
+                    <span>Send via WhatsApp</span>
                   </>
                 )}
               </button>

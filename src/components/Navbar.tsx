@@ -25,9 +25,9 @@ export default function Navbar({ onNavigate, onCRMClick }: NavbarProps) {
             {/* Logo */}
             <div className="flex items-center space-x-3">
               <img
-                src={logoBrand} // Use the imported variable
+                src={logoBrand}
                 alt="IT LOGIC LABS Logo"
-                className="w-10 h-10 rounded-lg object-cover border-2 border-orange-500"
+                className="w-12 h-12 rounded-lg object-cover" // Removed border and increased size
               />
               <div className="text-2xl font-bold text-white">
                 IT LOGIC <span className="text-orange-500">LABS</span>
@@ -35,7 +35,7 @@ export default function Navbar({ onNavigate, onCRMClick }: NavbarProps) {
             </div>
           </motion.div>
 
-          {/* Rest of your code remains the same */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {menuItems.map((item) => (
               <button
@@ -59,6 +59,7 @@ export default function Navbar({ onNavigate, onCRMClick }: NavbarProps) {
             </div>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -70,6 +71,7 @@ export default function Navbar({ onNavigate, onCRMClick }: NavbarProps) {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
