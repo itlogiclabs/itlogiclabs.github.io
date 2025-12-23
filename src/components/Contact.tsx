@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { Phone, MapPin, Send } from 'lucide-react';
 
 export default function Contact() {
@@ -44,29 +43,17 @@ export default function Contact() {
   return (
     <section id="contact" className="py-20 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-slate-900 mb-4">
             Get in <span className="text-orange-500">Touch</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Have a laptop issue? Reach out to us on WhatsApp and we'll get it fixed!
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
+          <div className="space-y-8">
             <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100">
               <div className="flex items-start space-x-4">
                 <div className="bg-orange-100 p-3 rounded-lg">
@@ -95,7 +82,7 @@ export default function Contact() {
                   <h3 className="text-lg font-semibold text-slate-900 mb-1">Address</h3>
                   <p className="text-gray-600">Matigara, 734010</p>
                   <a
-                    href="https://maps.app.goo.gl/xCdpmazHx2uYr2y18"
+                    href="https://maps.app.goo.gl/mweJeRPoMnuyfSJ57"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block mt-2 text-orange-500 hover:text-orange-600 font-medium"
@@ -108,7 +95,7 @@ export default function Contact() {
 
             <div className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.123456789!2d88.42!3d26.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQyJzM2LjAiTiA4OMKwMjUnMTIuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4385.06261822817!2d88.3904775!3d26.7209618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e44769104e3529%3A0xbfb85f77d63e31b8!2sIT%20LOGIC%20LABS!5e1!3m2!1sen!2sin!4v1766240704319!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -118,14 +105,9 @@ export default function Contact() {
                 title="IT Logic Labs Location"
               ></iframe>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 shadow-lg border border-gray-100 space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -190,7 +172,7 @@ export default function Contact() {
                 )}
               </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
